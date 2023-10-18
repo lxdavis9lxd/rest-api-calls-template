@@ -9,10 +9,10 @@ router.get('/', function(req, res, next) {
 
 router.post('/', async (req, res) => {
     const url = req.body.url;
-    const data = req.body.name;
-    const apiKey = process.env.restapikey; // use the restapikey environment variable or default to "123"
-    console.log(apiKey);
-    const authHeader = req.body.apiKey || "456";
+    const data = req.body.body;
+    const apiKey = req.body.token; // use the restapikey environment variable or default to "123"
+    console.log( url, data, apiKey);
+    const authHeader = "1234"
     if (authHeader !== apiKey) {
         return res.status(401).send('Unauthorized');
     }
