@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var doPostRouter = require('./routes/callresttest');
+var mongotestRouter = require('./routes/mongotest');
 var app = express();
 
 // view engine setup
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/mongotest', mongotestRouter);
 app.use('/callresttest', doPostRouter); // This is the new line of code that I added to the app.js file.
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
