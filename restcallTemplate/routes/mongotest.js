@@ -11,7 +11,7 @@ const router = express.Router();
 
 // GET route for mongotest.ejs
 router.get('/', (req, res) => {
-    res.render('mongotest',{ title: 'Mongo' });
+    res.render('mongotest',{ title: 'Mongo', data: '' });
 });
 
 // POST route for inserting data into MongoDB
@@ -24,7 +24,7 @@ var data = JSON.stringify({
     "database": "sample_airbnb",
     "dataSource": "Cluster0",
     "projection": {
-        "_id": "52cdef7c4bab8bd675297d8a",
+        "_id": req.body._id,
         "listing_url":1,
         "name":1,
         "summary":1,
@@ -74,16 +74,17 @@ var config = {
     },
     data: data
 };
-    console.log("config", config);        
+    //console.log("config", config);        
     axios(config)
     .then(function (response) {
-        console.log("data", JSON.stringify(response.data));
+        //console.log("data", JSON.stringify(response.data));
+        res.render('mongotest',{ title: 'Mongo', data: JSON.stringify(response.data) })
     })
     .catch(function (error) {
         console.log(error);
     });
-    console.log("req.body1", req.body);
-    res.render('mongotest',{ title: 'Mongo' });   
+    //console.log("req.body1", req.body);
+   // res.render('mongotest',{ title: 'Mongo' });   
 });
 
 module.exports = router;
