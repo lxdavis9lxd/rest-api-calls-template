@@ -24,8 +24,44 @@ var data = JSON.stringify({
     "database": "sample_airbnb",
     "dataSource": "Cluster0",
     "projection": {
-        "_id": req.body.id
-    }
+        "_id": "52cdef7c4bab8bd675297d8a",
+        "listing_url":1,
+        "name":1,
+        "summary":1,
+        "description":1,
+        "notes":1,
+        "access":1,
+        "house_rules":1,
+        "property_type":1,
+        "room_type":1,
+        "bed_type":1,
+        "minimum_nights":1,
+        "maximum_nights":1,
+        "cancellation_policy":1,
+        "last_scraped":1,
+        "calendar_last_scraped":1,
+        "first_review":1,
+        "last_review":1,
+        "accommodates":1,
+        "bedrooms":1,
+        "beds":1,
+        "number_of_reviews":1,
+        "bathrooms":1,
+        "amenities":1,
+        "price":1,
+        "security_deposit":1,
+        "cleaning_fee":1,
+        "extra_people":1,
+        "guests_included":1,
+        "images":1,
+        "host":1,
+        "address":1,
+        "availability":1,
+        "review_scores":1,
+        "reviews":1   
+
+
+}
 });
             
 var config = {
